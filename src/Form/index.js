@@ -3,7 +3,7 @@ import "./style.css";
 const Form = () => (
     <fieldset className="form__fieldset">
         <legend className="form__legend">Kalkulator walut</legend>
-        <div>
+        <div className="form__container">
             <label>
                 <span className="form__labelText">
                     Wartość [PLN]:
@@ -12,7 +12,7 @@ const Form = () => (
                     step="0.01" autofocus />
             </label>
         </div>
-        <div>
+        <div className="form__container">
             <label>
                 <span className="form__labelText">
                     Wybierz walutę
