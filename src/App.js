@@ -8,9 +8,7 @@ function App() {
         <form className="form">
             <Form />
             <Button />
-            <p className="form__result">
-                Otrzymana kwota: <strong></strong>
-            </p>
+            <Result />
         </form>
     );
 }
