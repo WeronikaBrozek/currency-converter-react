@@ -1,14 +1,13 @@
 import React from "react";
 import Form from "./Form";
+import Button from "./Button";
 
 
 function App() {
     return (
         <form className="form">
             <Form />
-            <div>
-                <button className="form__button">Przelicz</button>
-            </div>
+            <Button />
             <p className="form__result">
                 Otrzymana kwota: <strong></strong>
             </p>
