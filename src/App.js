@@ -5,7 +5,7 @@ import Form from "./Form";
 function App() {
     return (
         <form className="form">
-            
+            <Form />
             <div>
                 <button className="form__button">Przelicz</button>
             </div>
