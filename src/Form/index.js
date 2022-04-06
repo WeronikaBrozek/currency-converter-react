@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import  currencies  from "../currencies.js";
 
 const Form = () => {
 
@@ -8,7 +9,7 @@ const Form = () => {
 
 
     const onInputChange = ({ target }) => setInput(target.value);
-    const onOutputChange = ({target}) => setOutputCurrency(target.output);
+    const onOutputChange = ({ target }) => setOutputCurrency(target.output);
 
 
     const onFormSubmit = (event) => {
@@ -45,9 +46,11 @@ const Form = () => {
                             output={outputCurrency}
                             onChange={onOutputChange}
                         >
-                            <option value="EUR" selected>EUR</option>
-                            <option value="GBP">GBP</option>
-                            <option value="JPY">JPY</option>
+                            {currencies.map((currency) => (
+                                <option key={currency.id} value={currency.shortName}>
+                                    {currency.shortName}
+                                </option>
+                            ))}
                         </select>
                     </label>
                 </div>
