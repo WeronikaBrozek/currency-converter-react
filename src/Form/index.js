@@ -1,15 +1,19 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 const Form = () => {
 
+    const [input, setInput] = useState();
+    const [outputCurrency, setOutputCurrency] = useState();
+
+
+    const onInputChange = ({ target }) => setInput(target.value);
+    const onOutputChange = ({target}) => setOutputCurrency(target.output);
+
+
     const onFormSubmit = (event) => {
         event.preventDefault();
     };
-
-    const onValueChange = ({target}) => setValue(target.value);
-
-    const [value, setValue] = useState();
 
     return (
         <form onSubmit={onFormSubmit}>
@@ -27,8 +31,8 @@ const Form = () => {
                             required min="0.01"
                             step="0.01"
                             autofocus
-                            value={value}
-                            onChange={onValueChange} />
+                            value={input}
+                            onChange={onInputChange} />
                     </label>
                 </div>
                 <div className="form__container">
@@ -36,7 +40,11 @@ const Form = () => {
                         <span className="form__labelText">
                             Wybierz walutę
                         </span>
-                        <select name="currency">
+                        <select
+                            name="currency"
+                            output={outputCurrency}
+                            onChange={onOutputChange}
+                        >
                             <option value="EUR" selected>EUR</option>
                             <option value="GBP">GBP</option>
                             <option value="JPY">JPY</option>
