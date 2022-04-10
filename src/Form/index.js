@@ -1,23 +1,35 @@
 import React, { useState } from "react";
 import "./style.css";
-import  currencies  from "../currencies.js";
+import currencies from "../currencies.js";
+
 
 const Form = () => {
 
     const [input, setInput] = useState();
     const [outputCurrency, setOutputCurrency] = useState();
+    const [result, setResult] = useState("");
 
 
     const onInputChange = ({ target }) => setInput(target.value);
     const onOutputChange = ({ target }) => setOutputCurrency(target.output);
 
+    // const calculateResult = () => {
+    //     const rate = currencies.find(({ id }) => id === currency).rate;
+    //     setResult({
+    //         sourceAmount: +input,
+    //         targetAmount: input / rate,
+    //         currency,
+    //     });
+    // };
+
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        // calculateResult();
     };
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <form className= "form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
                 <div className="form__container">
@@ -55,6 +67,14 @@ const Form = () => {
                     </label>
                 </div>
             </fieldset>
+            < div >
+                <button
+                    className="form__button"
+                    onClick={() => console.log("Kliknięto przycisk")}
+                >
+                    Przelicz
+                </button>
+            </div >
         </form>
     );
 

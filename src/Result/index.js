@@ -1,9 +1,9 @@
 import "./style.css";
 
-const Result = () => (
+const RenderResult = ({result}) => (
     <p className="form__result">
-        Otrzymana kwota: <strong></strong>
+        Otrzymana kwota: <strong>{result}</strong>
     </p>
 );
 
-export default Result;
+export default RenderResult;

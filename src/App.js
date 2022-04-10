@@ -1,15 +1,13 @@
 import React from "react";
 import Form from "./Form";
-import Button from "./Button";
 import Result from "./Result";
 
 function App() {
     return (
-        <form className="form">
+        <container>
             <Form />
-            <Button />
             <Result />
-        </form>
+        </container>
     );
 }
 
