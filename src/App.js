@@ -1,13 +1,11 @@
 import React from "react";
 import Form from "./Form";
-import Result from "./Result";
 
 function App() {
     return (
-        <container>
+        <main>
             <Form />
-            <Result />
-        </container>
+        </main>
     );
 }
 

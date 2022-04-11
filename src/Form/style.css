@@ -57,3 +57,7 @@
 .form__button:active {
     background-color: #e4b955;
 }
+
+.form__result {
+    color: #e5e5e5;
+}
