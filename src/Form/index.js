@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import currencies from "../currencies.js";
-import render from "./Render";
+import formatResult from "./formatResult";
 
 const Form = () => {
 
@@ -16,7 +16,7 @@ const Form = () => {
         const currencyRate = currencies.find(({ shortName }) => shortName === outputCurrency).rate;
 
         setResult(
-            render({
+            formatResult({
                 targetAmount: +input / currencyRate,
                 outputCurrency,
             })
