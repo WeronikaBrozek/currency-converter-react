@@ -1,26 +1,11 @@
-import { format } from 'date-fns';
-import { pl } from 'date-fns/locale';
-import {useState, useEffect} from "react";
+import  useDate from "./useDate";
+                  
+const Clock = () => {
 
-const useDate = () => {
-    const [date, setDate] = useState((format(new Date(), "'Dzisiaj jest' EEEE, d LLLL, pp")));
+    const date = useDate();
+    let formatedDate = `${date.toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long", })}, ${date.toLocaleTimeString()}`
 
-    useEffect(() => {
-        const intervalID = setInterval(() => {
-            setDate(format(new Date(), "'Dzisiaj jest' EEEE, d LLLL, pp")); 
-        },{locale: pl}, 1000);
-
-        return () => {
-            clearInterval(intervalID)
-        };
-    }, []);
-    
-    return date;
+    return (formatedDate);
 };
 
-export default useDate;
-
-// const dateAndHour = () => {
-//     format(new Date(), "'Dzisiaj jest' PPPP");
-//     return dateAndHour;
-// };
+export default Clock;
