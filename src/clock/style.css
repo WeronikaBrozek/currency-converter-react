@@ -1,0 +1,7 @@
+.clock {
+    font-family: 'Inconsolata', monospace;
+    margin-top: 5px;
+    padding: 2px;
+    text-align: right;
+    font-size: small;
+};
