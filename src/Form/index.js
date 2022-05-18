@@ -34,7 +34,7 @@ const Form = () => {
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
-                <div className="clock"><Clock/></div>
+                <div><Clock/></div>
                 <div className="form__container">
                     <label>
                         <span className="form__labelText">
