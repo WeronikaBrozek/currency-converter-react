@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./style.css";
 import currencies from "../currencies.js";
 import formatResult from "./formatResult";
 import Clock from "../clock/index";
+import {MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result} from "./styled";
 
 
 const Form = () => {
@@ -31,17 +31,16 @@ const Form = () => {
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Kalkulator walut</legend>
+        <MainForm onSubmit={onFormSubmit}>
+            <Fieldset>
+                <Legend>Kalkulator walut</Legend>
                 <div><Clock /></div>
-                <div className="form__container">
+                <Container>
                     <label>
-                        <span className="form__labelText">
+                        <LabelText>
                             Wartość [PLN]:
-                        </span>
-                        <input
-                            className="form__field"
+                        </LabelText>
+                        <Input
                             type="number"
                             name="amount"
                             required min="0.01"
@@ -50,12 +49,12 @@ const Form = () => {
                             value={input}
                             onChange={onInputChange} />
                     </label>
-                </div>
-                <div className="form__container">
+                </Container>
+                <Container>
                     <label>
-                        <span className="form__labelText">
+                        <LabelText>
                             Wybierz walutę
-                        </span>
+                        </LabelText>
                         <select
                             name="currency"
                             value={outputCurrency}
@@ -70,19 +69,17 @@ const Form = () => {
                             ))}
                         </select>
                     </label>
-                </div>
-            </fieldset>
+                </Container>
+            </Fieldset>
             < div >
-                <button
-                    className="form__button"
-                >
+                <Button>
                     Przelicz
-                </button>
+                </Button>
             </div >
-            <p className="form__result">
+            <Result>
                 Otrzymana kwota: <strong>{result}</strong>
-            </p>
-        </form>
+            </Result>
+        </MainForm>
     );
 };
 
