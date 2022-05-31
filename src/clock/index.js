@@ -1,5 +1,5 @@
 import  useDate from "./useDate";
-import "./style.css";
+import {ClockItem} from "./styled";
                   
 const Clock = () => {
     const date = useDate();
@@ -7,7 +7,7 @@ const Clock = () => {
         ("pl-PL", { weekday: "long", day: "numeric", month: "long", })}, 
         ${date.toLocaleTimeString()}`
 
-    return  <p className="clock">Dzisiaj jest {formatedDate}</p>;
+    return  <ClockItem>Dzisiaj jest {formatedDate}</ClockItem>;
 };
 
 export default Clock;
