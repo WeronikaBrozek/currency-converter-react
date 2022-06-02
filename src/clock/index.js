@@ -1,8 +1,9 @@
-import  useDate from "./useDate";
+import  useCurrentDate from "./useCurrentDate";
 import {ClockItem} from "./styled";
                   
 const Clock = () => {
-    const date = useDate();
+    const date = useCurrentDate();
+    
     let formatedDate = `${date.toLocaleDateString
         ("pl-PL", { weekday: "long", day: "numeric", month: "long", })}, 
         ${date.toLocaleTimeString()}`
