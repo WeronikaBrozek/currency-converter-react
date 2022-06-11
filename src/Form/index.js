@@ -4,7 +4,6 @@ import formatResult from "./formatResult";
 import Clock from "../clock/index";
 import {MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result} from "./styled";
 
-
 const Form = () => {
 
     const [input, setInput] = useState("");
