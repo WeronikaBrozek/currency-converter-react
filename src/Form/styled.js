@@ -8,19 +8,19 @@ export const MainForm = styled.form`
 
 export const Fieldset = styled.fieldset`
     border: 1px solid #3a3a3a;
-    background-color: rgba(231, 231, 231, 0.486);
+    background-color: ${({ theme }) => theme.color.mercury};
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 19px 1px #1b1a1a;
+    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.codGray};
 `;
 
 export const Legend = styled.legend`
     padding: 5px;
     border-radius: 5px;
     border: none;
-    color: #fff;
-    background-color: #b8860b;
-    box-shadow: 0px 0px 13px 1px #333;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.hotDoddy};
+    box-shadow: 0px 0px 13px 1px ${({ theme }) => theme.color.mineShaft};
 `;
 
 export const Container = styled.div`
@@ -33,7 +33,7 @@ export const LabelText = styled.span`
 `;
 
 export const Input = styled.input`
-    border: 1px solid #3a3a3a;
+    border: 1px solid ${({ theme }) => theme.color.mineShaft};
     padding: 5px;
     max-width: 250px;
     width: 100%;
@@ -48,21 +48,21 @@ export const Button = styled.button`
     width: 100%;
     border: none;
     border-radius: 5px;
-    background-color: darkgoldenrod;
-    color: #fff;
+    background-color: ${({ theme }) => theme.color.hotDoddy};
+    color: ${({ theme }) => theme.color.white};
     transition: 0.7s;
-    box-shadow: 0px 0px 19px 1px #1b1a1a;
+    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.codGray};
     cursor: pointer;
 
     &:hover {
-        background-color: #ddaa27;
+        filter: brightness(110%);
     }
 
     &:active {
-        background-color: #e4b955;
+        filter: brightness(120%);
     }
 `;
 
 export const Result = styled.p`
-    color: #e5e5e5;
+    color: ${({ theme }) => theme.color.mercury};
 `;
