@@ -24,7 +24,7 @@ export const Legend = styled.legend`
 `;
 
 export const Container = styled.div`
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
 `;
 
 export const LabelText = styled.span`
@@ -42,7 +42,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     padding: 5px;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0;
     font-family: 'Raleway', sans-serif;
     max-width: 700px;
     width: 100%;
