@@ -11,7 +11,7 @@ export const Fieldset = styled.fieldset`
     background-color: ${({ theme }) => theme.color.mercury};
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.codGray};
+    box-shadow: 0 0 19px 1px ${({ theme }) => theme.color.codGray};
 `;
 
 export const Legend = styled.legend`
@@ -20,11 +20,11 @@ export const Legend = styled.legend`
     border: none;
     color: ${({ theme }) => theme.color.white};
     background-color: ${({ theme }) => theme.color.hotDoddy};
-    box-shadow: 0px 0px 13px 1px ${({ theme }) => theme.color.mineShaft};
+    box-shadow: 0 0 13px 1px ${({ theme }) => theme.color.mineShaft};
 `;
 
 export const Container = styled.div`
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0 20px 0;
 `;
 
 export const LabelText = styled.span`
