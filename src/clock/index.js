@@ -4,7 +4,7 @@ import { ClockItem } from "./styled";
 const Clock = () => {
     const date = useCurrentDate();
 
-    let formatedDate = `${date.toLocaleDateString
+    const formatedDate = `${date.toLocaleDateString
         ("pl-PL", { weekday: "long", day: "numeric", month: "long", })}, 
         ${date.toLocaleTimeString()}`
 
