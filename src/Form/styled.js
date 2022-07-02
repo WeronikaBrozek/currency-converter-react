@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const MainForm = styled.form`
     max-width: 700px;
-    padding: 20px;
+    padding: 150px 20px;
     margin: auto;
 `;
 
 export const Fieldset = styled.fieldset`
-    border: 1px solid #3a3a3a;
-    background-color: ${({ theme }) => theme.color.mercury};
+    border: 1px solid ${({ theme }) => theme.color.domino};
+    background-color: ${({ theme }) => theme.color.pearlBush};
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 19px 1px ${({ theme }) => theme.color.codGray};
+    box-shadow: 0 0 19px 1px ${({ theme }) => theme.color.domino};
 `;
 
 export const Legend = styled.legend`
@@ -19,8 +19,8 @@ export const Legend = styled.legend`
     border-radius: 5px;
     border: none;
     color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.hotDoddy};
-    box-shadow: 0 0 13px 1px ${({ theme }) => theme.color.mineShaft};
+    background-color: ${({ theme }) => theme.color.diSerria};
+    box-shadow: 0 0 13px 1px ${({ theme }) => theme.color.santaFe};
 `;
 
 export const Container = styled.div`
@@ -48,10 +48,10 @@ export const Button = styled.button`
     width: 100%;
     border: none;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.color.hotDoddy};
+    background-color: ${({ theme }) => theme.color.diSerria};
     color: ${({ theme }) => theme.color.white};
     transition: 0.7s;
-    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.codGray};
+    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.santaFe};
     cursor: pointer;
 
     &:hover {
@@ -63,6 +63,13 @@ export const Button = styled.button`
     }
 `;
 
-export const Result = styled.p`
-    color: ${({ theme }) => theme.color.mercury};
+export const Result = styled.div`
+    color: ${({ theme }) => theme.color.mineShaft};
 `;
+
+
+export const Loading = styled.div`
+    max-width: 700px;
+    padding: 150px 20px;
+    margin: auto;
+`
