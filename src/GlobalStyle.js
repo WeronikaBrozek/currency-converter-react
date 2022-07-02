@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
         max-width: 1000px;
         margin: auto;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Lato', sans-serif;
         color: #000;
+        background: fixed;
         background-color: #000;
         background-image: url("${background}");
         background-size: cover;
