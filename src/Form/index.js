@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import currencies from "../currencies.js";
 import formatResult from "./formatResult";
 import Clock from "../Clock/index";
 import { useRatesAndDate } from "../useRatesAndDate";
-import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result, Loading } from "./styled";
+import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result, Loading, LegalInfo } from "./styled";
 
 const Form = () => {
 
@@ -106,10 +105,9 @@ const Form = () => {
                     :
                     ""}
                 </Result>
-                <p>
-                    Kursy walut są pobierane z Europejskiego Banku Centralnego.
-                    Aktualne na dzień:<strong>{` ${date}`}</strong>
-                </p>
+                <LegalInfo>
+                    Kursy walut są pobierane z Europejskiego Banku Centralnego. <br></br>Aktualne na dzień:<strong>{` ${date}`}</strong>
+                </LegalInfo>
             </Fieldset>
         </MainForm>
     );

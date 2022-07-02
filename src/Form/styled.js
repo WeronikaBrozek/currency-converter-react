@@ -43,7 +43,7 @@ export const Input = styled.input`
 export const Button = styled.button`
     padding: 5px;
     margin: 20px 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lato', sans-serif;
     max-width: 700px;
     width: 100%;
     border: none;
@@ -51,7 +51,7 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.diSerria};
     color: ${({ theme }) => theme.color.white};
     transition: 0.7s;
-    box-shadow: 0px 0px 19px 1px ${({ theme }) => theme.color.santaFe};
+    box-shadow: 0px 0px 7px 1px ${({ theme }) => theme.color.santaFe};
     cursor: pointer;
 
     &:hover {
@@ -72,4 +72,11 @@ export const Loading = styled.div`
     max-width: 700px;
     padding: 150px 20px;
     margin: auto;
+`
+
+export const LegalInfo = styled.p`
+    font-size: small;
+    text-align: center;
+    color: ${({ theme }) => theme.color.gray};
+    margin: 5px;
 `
