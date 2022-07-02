@@ -1,9 +1,7 @@
 export const theme = {
     color: {
-        mercury: "#e7e7e7",
-        codGray: "#1b1a1a",
         white: "#fff",
-        hotDoddy: "#b8860b",
+        gray: "#928f8f",
         mineShaft: "#3a3a3a",
         pearlBush: "#EEE9E2",
         domino: "#978263",
