@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import currencies from "../currencies.js";
 import formatResult from "./formatResult";
 import Clock from "../Clock/index";
-import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result } from "./styled";
+import { useRatesAndDate } from "../useRatesAndDate";
+import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result, Loading } from "./styled";
 
 const Form = () => {
 
     const [input, setInput] = useState("");
     const [outputCurrency, setOutputCurrency] = useState("EUR");
     const [result, setResult] = useState("");
+    const { status, date, rates } = useRatesAndDate();
 
     const onInputChange = ({ target }) => setInput(target.value);
     const onOutputCurrencyChange = ({ target }) => setOutputCurrency(target.value);
 
     const calculateResult = (outputCurrency) => {
-        const currencyRate = currencies.find(({ shortName }) => shortName === outputCurrency).rate;
+        const currencyRate = rates[outputCurrency];
 
         setResult(
             formatResult({
@@ -29,6 +31,31 @@ const Form = () => {
         calculateResult(outputCurrency);
     };
 
+    if (status === "error") {
+        return <Loading>
+            <Fieldset>
+                <Legend>Kalkulator walut</Legend>
+                <div><Clock /></div>
+                <Container>
+                    <p>
+                        Ojoj... Coś poszło nie tak :( spróbuj jeszcze raz za moment!
+                    </p>
+                </Container>
+            </Fieldset>
+        </Loading>
+    } else if (status === "loading") {
+        return <Loading>
+            <Fieldset>
+                <Legend>Kalkulator walut</Legend>
+                <div><Clock /></div>
+                <Container>
+                    <p>
+                        Momencik...trwa pobieranie danych.
+                    </p>
+                </Container>
+            </Fieldset>
+        </Loading>
+    }
     return (
         <MainForm onSubmit={onFormSubmit}>
             <Fieldset>
@@ -59,25 +86,31 @@ const Form = () => {
                             value={outputCurrency}
                             onChange={onOutputCurrencyChange}
                         >
-                            {currencies.map((currency) => (
+                            {Object.keys(rates).map((currency) => (
                                 <option
-                                    key={currency.id}
-                                    value={currency.shortName}>
-                                    {currency.shortName}
+                                    key={currency}
+                                    value={currency}
+                                >
+                                    {currency}
                                 </option>
                             ))}
                         </select>
                     </label>
                 </Container>
+                < div >
+                    <Button>
+                        Przelicz
+                    </Button>
+                </div >
+                <Result> {result ? (<p>Otrzymana kwota: <strong>{result}</strong></p>)
+                    :
+                    ""}
+                </Result>
+                <p>
+                    Kursy walut są pobierane z Europejskiego Banku Centralnego.
+                    Aktualne na dzień:<strong>{` ${date}`}</strong>
+                </p>
             </Fieldset>
-            < div >
-                <Button>
-                    Przelicz
-                </Button>
-            </div >
-            <Result>
-                Otrzymana kwota: <strong>{result}</strong>
-            </Result>
         </MainForm>
     );
 };
