@@ -1,6 +1,6 @@
 # Currency Converter
 
-It's a simple website where you can convert currency values based on 15.01.2022 day exchange values. This calculator lets you convert PLN to EUR, GBP and JPY.
+It's a website that provides for the easy conversion of currency values based on present-day exchange rates. Based value is PLN. Currencies are imported from [Exchange rates API](https://exchangerate.host/#/#docs).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -12,12 +12,12 @@ To use calculator, provide amount of money you want to convert and then choose d
 
 
 Example of use:
-![gif](public/record.gif)
+![gif](public/page_UI.gif)
 
 ## Technologies
 Project is created with:
-* HTML (BEM),
-* CSS,
+* React.js
+* Styled Components
 * Java Script ES6.
 ## Available Scripts
 
