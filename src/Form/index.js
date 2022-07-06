@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import formatResult from "./formatResult";
 import Clock from "../Clock/index";
-import { useRatesAndDate } from "../useRatesAndDate";
+import { useRatesAndDate } from "./useRatesAndDate";
 import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result, Loading, LegalInfo } from "./styled";
 
 const Form = () => {
