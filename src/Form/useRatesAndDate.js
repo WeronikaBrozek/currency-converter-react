@@ -14,10 +14,10 @@ const useRatesAndDate = () => {
                 const response = await axios.get(path);
                 setRates(response.data.rates);
                 setDate(response.data.date);
-                setStatus(() => "ok");
+                setStatus("ok");
             } catch (error) {
-                setStatus(() => "error")
-                console.error("Something bad has happend", error)
+                setStatus("error");
+                console.error("Something bad has happend", error);
             };
         };
         setTimeout(getData, 1500);

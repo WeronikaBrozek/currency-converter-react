@@ -5,7 +5,6 @@ import { useRatesAndDate } from "./useRatesAndDate";
 import { MainForm, Fieldset, Legend, Container, LabelText, Input, Button, Result, Loading, LegalInfo } from "./styled";
 
 const Form = () => {
-
     const [input, setInput] = useState("");
     const [outputCurrency, setOutputCurrency] = useState("EUR");
     const [result, setResult] = useState("");
@@ -42,7 +41,9 @@ const Form = () => {
                 </Container>
             </Fieldset>
         </Loading>
-    } else if (status === "loading") {
+    } 
+    
+    if (status === "loading") {
         return <Loading>
             <Fieldset>
                 <Legend>Kalkulator walut</Legend>
@@ -55,6 +56,7 @@ const Form = () => {
             </Fieldset>
         </Loading>
     }
+    
     return (
         <MainForm onSubmit={onFormSubmit}>
             <Fieldset>
